@@ -6,7 +6,7 @@ class TaxiButton extends StatelessWidget {
   final Color color;
   final VoidCallback onPressed;
 
-  TaxiButton({Key? key, required this.title, required this.onPressed, required this.color}) : super(key: key);
+  const TaxiButton({Key? key, required this.title, required this.onPressed, required this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
