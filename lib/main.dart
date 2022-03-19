@@ -4,24 +4,26 @@ import 'package:cab_rider/screens/loginpage.dart';
 import 'package:cab_rider/screens/mainpage.dart';
 import 'package:cab_rider/screens/registrationpage.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'package:firebase_database/ui/firebase_animated_list.dart';
-import 'package:flutter/foundation.dart' show defaultTargetPlatform, kIsWeb;
 import 'package:flutter/material.dart';
+
+import 'helpers/PlatformInfo.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: const FirebaseOptions(
-      apiKey: 'AIzaSyA2KC9TCv0kDeqHm6jlFZMY5Swo7LeyDyY',
-      appId: '1:192384878752:android:7b786a3db4af12136361c5',
-      databaseURL:
-          'https://cabrider-25b7f-default-rtdb.asia-southeast1.firebasedatabase.app',
-      storageBucket: 'cabrider-25b7f.appspot.com',
-      messagingSenderId: '192384878752',
-      projectId: 'cabrider-25b7f',
-    ),
-  );
+
+  if (PlatformInfo().getCurrentPlatformType() == PlatformType.Android) {
+    await Firebase.initializeApp(
+      options: const FirebaseOptions(
+        apiKey: 'AIzaSyA2KC9TCv0kDeqHm6jlFZMY5Swo7LeyDyY',
+        appId: '1:192384878752:android:7b786a3db4af12136361c5',
+        databaseURL:
+            'https://cabrider-25b7f-default-rtdb.asia-southeast1.firebasedatabase.app',
+        storageBucket: 'cabrider-25b7f.appspot.com',
+        messagingSenderId: '192384878752',
+        projectId: 'cabrider-25b7f',
+      ),
+    );
+  }
 
   runApp(const MyApp());
 }

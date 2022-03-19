@@ -31,8 +31,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-
   var fullNameController = TextEditingController();
   var phoneController = TextEditingController();
   var emailController = TextEditingController();
@@ -61,6 +59,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
       showSnackBar('Please enter a valid password');
       return;
     }
+
+    final FirebaseAuth _auth = FirebaseAuth.instance;
 
     final User? user = (await _auth
             .createUserWithEmailAndPassword(
