@@ -37,9 +37,13 @@ dependencies:
   firebase_core: ^1.13.1
   firebase_auth: ^3.3.11
   firebase_database: ^9.0.8
-  connectivity_plus : ^2.2.1
-  google_maps_flutter : ^2.1.2
+  connectivity_plus: ^2.2.1
+  google_maps_flutter: ^2.1.2
   outline_material_icons: ^0.1.1
+  geolocator: ^8.2.0
+  http: ^0.13.4
+  flutter_osm_plugin: ^0.32.2
+  provider: ^6.0.2
 
 dev_dependencies:
   flutter_test:
